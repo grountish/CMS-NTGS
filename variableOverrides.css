@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+
+:root {
+    --brand-primary: #51ab33;
+    --brand-secondary: #51ab33;
+    --black: #1b1b1b;
+    --gray-base:#5c5c5c;
+    --font-family-base: 'Space Grotesk' !important;
+    font-family: 'Space Grotesk' !important;
+  }
+  *{
+    font-family: 'Space Grotesk' !important;
+  }

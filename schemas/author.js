@@ -1,7 +1,10 @@
+import { GrUser } from 'react-icons/gr'
+
 export default {
   name: 'author',
   title: 'Author',
   type: 'document',
+  icon:GrUser,
   fields: [
     {
       name: 'name',

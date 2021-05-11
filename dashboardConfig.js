@@ -3,12 +3,16 @@ export default {
     {
       name: "project-users",
       layout: {
-        width: "medium",
+        width: "small",
         height: "small",
       },
     },
+    
     {
-      name: "netlify",
+      name: "netlify",layout: {
+        width: "small",
+        height: "small",
+      },
       options: {
         title: "Website links",
         sites: [

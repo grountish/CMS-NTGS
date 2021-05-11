@@ -1,7 +1,10 @@
+import { GrSplit } from 'react-icons/gr'
+
 export default {
   name: "category",
   title: "Category",
   type: "document",
+  icon:GrSplit,
   fields: [
     {
       name: "title",

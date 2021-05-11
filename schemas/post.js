@@ -1,16 +1,15 @@
+import { GrDocument } from 'react-icons/gr'
+
 export default {
   name: 'post',
   title: 'Post',
   type: 'document',
+  icon:GrDocument,
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-    },{
-      name: 'color',
-      title: 'Color',
-      type: 'colorPicker'
     },
     {
       name: 'slug',
@@ -59,6 +58,15 @@ export default {
           ]
         }
       ],
+    },  {
+      name: 'gridNote3',
+      type: 'note',
+      options: {
+       
+        headline: 'Hey!',
+        message: `Remember being consistent between Categories and Subcategories 😉`,
+        tone: 'caution'
+      }
     },
     {
       name: 'publishedAt',
@@ -70,17 +78,10 @@ export default {
       title: 'Body',
       type: 'blockContent',
     },{
-      name: "tags",
-      title: "tags",
-      type: "array",
-      of: [
-        {
-          type: "string",
-          name:"tag",
-          title:"tag"
-        },
-      ],
-    },
+      name: 'tags',
+      title: 'Tags',
+      type: 'tags',
+    }
   ],
 
   preview: {

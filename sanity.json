@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "UNDPEvents"
+    "name": "Disco Digital"
   },
   "api": {
     "projectId": "ygcad2ic",
@@ -16,7 +16,9 @@
     "color-picker",
     "dashboard-widget-netlify",
     "@sanity/dashboard",
-    "@sanity/production-preview"
+    "@sanity/production-preview",
+    "autocomplete-tags",
+    "note-field"
   ],
   "env": {
     "development": {
@@ -40,7 +42,15 @@
     },
     {
       "implements": "part:@sanity/production-preview/resolve-production-url",
-      "path": "./resolveProductionUrl.js" 
+      "path": "./resolveProductionUrl.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "variableOverrides.css"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "components/myLogo.js"
     }
   ]
 }

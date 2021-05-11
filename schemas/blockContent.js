@@ -15,7 +15,31 @@ const TitleStyle = (props) => (
     {props.children}
   </span>
 );
-
+const highlightIcon = () => (
+  <span
+    style={{
+      fontWeight: "bold",
+      backgroundColor: "green",
+      color: "white",
+      padding: "2px",
+    }}
+  >
+    GB
+  </span>
+);
+const highlightRender = (props) => (
+  <div
+    style={{
+      backgroundColor: "green",
+      color: "white",
+      width: "96%",
+      padding: "3%",
+    }}
+  >
+    {" "}
+    <p> {props.children}</p>
+  </div>
+);
 export default {
   title: "Block Content",
   name: "blockContent",
@@ -54,11 +78,17 @@ export default {
           { title: "Code", value: "code" },
           { title: "Underline", value: "underline" },
           { title: "Strike", value: "strike-through" },
-          
+          {
+            title: "Highlight",
+            value: "highlight",
+            blockEditor: {
+              icon: highlightIcon,
+              render: highlightRender,
+            },
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
-          
           {
             title: "URL",
             name: "link",
