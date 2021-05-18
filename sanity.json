@@ -18,7 +18,8 @@
     "@sanity/dashboard",
     "@sanity/production-preview",
     "autocomplete-tags",
-    "note-field"
+    "note-field",
+    "order-documents"
   ],
   "env": {
     "development": {

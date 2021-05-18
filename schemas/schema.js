@@ -10,6 +10,7 @@ import category from './category'
 import subcategory from './subcategory'
 import post from './post'
 import author from './author'
+import youtube from './youtube'
 import home from './documents/home'
 import about from './documents/about'
 import archives from './documents/archives'
@@ -28,6 +29,7 @@ export default createSchema({
     // in the studio.
     blockContent,
     subcategory,
+    youtube,
     post,
     author,
     event,

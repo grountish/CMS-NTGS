@@ -7,6 +7,11 @@ export default {
   icon:GrDocument,
   fields: [
     {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },{
       name: 'title',
       title: 'Title',
       type: 'string',

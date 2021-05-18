@@ -38,6 +38,20 @@ export default {
         message: `Don't forget to click on the 'Generate' button!`,
         tone: 'caution'
       }
-    }
+    },{
+      name: "posts",
+      title: "posts",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [
+            {
+              type: "post",
+            },
+          ]
+        },
+      ],
+    },
   ],
 };
