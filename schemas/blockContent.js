@@ -27,6 +27,18 @@ const highlightIcon = () => (
     GB
   </span>
 );
+const htmlIcon = () => (
+  <span
+    style={{
+      fontWeight: "bold",
+      backgroundColor: "red",
+      color: "white",
+      padding: "2px",
+    }}
+  >
+    html
+  </span>
+);
 const highlightRender = (props) => (
   <div
     style={{
@@ -40,6 +52,28 @@ const highlightRender = (props) => (
     <p> {props.children}</p>
   </div>
 );
+
+const htmlRender = ({ value }) => {
+  const { code } = value;
+
+  return <div dangerouslySetInnerHTML={{ __html: code + '' }}/>;
+};
+
+import imageUrlBuilder from '@sanity/image-url'
+import client from 'part:@sanity/base/client'
+
+const builder = imageUrlBuilder(client)
+
+
+
+const imgRender = ({ value }) => {
+  let a = value.image ? builder.image(value.image.asset._ref).toString() : 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png'
+  let size = (value.size && value.size[0])  ? value.size[0]*130 + 'px' : '300px'
+  const style = {
+    width:size
+  };
+  return <img style={style}  src={a} alt="a" />;
+};
 export default {
   title: "Block Content",
   name: "blockContent",
@@ -112,7 +146,58 @@ export default {
       options: { hotspot: true },
     },
     {
-      type:'youtube'
-    }
+      type: "youtube",
+    },
+    {
+      name: "html",
+      title: "html",
+      type: "object",
+      preview: {
+        select: {
+          code: 'code'
+        },
+        component: htmlRender
+      },
+      fields: [
+        {
+          name: "code",
+          type: "text",
+          title: "code",
+        },
+      ],
+    },
+    {
+      name: "img",
+      title: "img",
+      type: "object",
+      preview: {
+        select: {
+          image: 'image',
+          size:'size'
+        },
+        component: imgRender
+      },
+      fields: [
+        {
+          name: "image",
+          type: "image",
+          title: "image",
+        },
+        {
+          title: 'size',
+          name: 'size',
+          type: 'array',
+          of: [{type: 'number'}],
+          options: {
+            list: [
+              {title: 1, value: 1},
+              {title: 2, value: 2},
+              {title: 3, value: 3},
+            
+            ]
+          }
+        }
+      ],
+    },
   ],
 };

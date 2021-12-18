@@ -11,6 +11,7 @@ import subcategory from './subcategory'
 import post from './post'
 import author from './author'
 import youtube from './youtube'
+import gallery from './gallery'
 import home from './documents/home'
 import about from './documents/about'
 import archives from './documents/archives'
@@ -28,6 +29,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     blockContent,
+    gallery,
     subcategory,
     youtube,
     post,
